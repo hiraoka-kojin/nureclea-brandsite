@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>モニター募集｜ヌレクリア</title>
+    <meta name="description" content="ヌレクリアのモニター募集ページ。無料で商品をお試しいただけます。">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="header-logo">
+                <img src="images/product/logo.png" alt="ヌレクリア">
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ナビゲーション -->
+    <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="blog.html">コラム</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="https://amzn.to/4vIo0ef" class="nav-cta" target="_blank" rel="noopener">購入はこちら</a></li>
+        </ul>
+    </nav>
+
+    <!-- モニター募集 -->
+    <section class="monitor-page">
+        <div class="container">
+            <h1 class="page-title">モニター募集中</h1>
+            <p class="page-lead">現在、商品モニターを募集しています</p>
+
+            <div class="monitor-content-page">
+                <h2>募集内容</h2>
+                <ul class="monitor-list-page">
+                    <li>商品を無料でお届けします</li>
+                    <li>1〜2週間お試し後、アンケート（5問）にご回答ください</li>
+                    <li>お礼にAmazonギフト券（1,000円分）をお送りします</li>
+                    <li>SNS投稿は任意です（強制ではありません）</li>
+                </ul>
+
+                <h2>応募方法</h2>
+                <p class="monitor-note-page">XのDM（ダイレクトメッセージ）からお声がけしています。<br>※DMをお送りするため、相互フォローが必要となります。公式アカウント（@nureclea）をフォローの上、ご興味のある方はぜひお気軽にご返信ください。</p>
+
+                <div class="monitor-cta">
+                    <a href="https://x.com/nureclea" class="btn btn-primary" target="_blank" rel="noopener">公式X（@nureclea）を見る</a>
+                </div>
+
+                <h2>募集要項</h2>
+                <table class="monitor-table">
+                    <tr>
+                        <th>募集人数</th>
+                        <td>先着20名様</td>
+                    </tr>
+                    <tr>
+                        <th>応募条件</th>
+                        <td>20歳以上の女性</td>
+                    </tr>
+                    <tr>
+                        <th>お試し期間</th>
+                        <td>1〜2週間</td>
+                    </tr>
+                    <tr>
+                        <th>アンケート</th>
+                        <td>5問程度（所要時間：約5分）</td>
+                    </tr>
+                    <tr>
+                        <th>謝礼</th>
+                        <td>Amazonギフト券 1,000円分</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="back-link">
+                <a href="index.html">← トップページに戻る</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand">
+                <h2>ヌレクリア</h2>
+                <p>女性のためのフェムケアクリーム</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://x.com/nureclea" target="_blank" rel="noopener">公式X（@nureclea）</a>
+                <a href="contact.html">お問い合わせ</a>
+                <a href="tokusho.html">特定商取引法に基づく表記</a>
+            </div>
+            <div class="footer-contact">
+                <p>お問い合わせ: <a href="mailto:d2c@temahima.co.jp">d2c@temahima.co.jp</a></p>
+            </div>
+            <p class="footer-copyright">&copy; 2026 ヌレクリア All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ハンバーガーメニュー
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // メニュー外クリックで閉じる
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

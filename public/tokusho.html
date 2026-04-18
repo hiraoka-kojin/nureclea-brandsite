@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特定商取引法に基づく表記｜ヌレクリア</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .tokusho-page {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px 20px;
+        }
+
+        .tokusho-page h1 {
+            font-size: 2rem;
+            color: #9b7b9e;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .tokusho-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+
+        .tokusho-table th,
+        .tokusho-table td {
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .tokusho-table th {
+            background-color: #fdfbfd;
+            font-weight: 600;
+            color: #9b7b9e;
+            width: 30%;
+        }
+
+        .tokusho-table td {
+            background-color: #fff;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .back-link a {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #d4a5a5;
+            color: #fff;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .back-link a:hover {
+            background-color: #c08e8e;
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .tokusho-page h1 {
+                font-size: 1.6rem;
+            }
+
+            .tokusho-table th,
+            .tokusho-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .tokusho-table th {
+                border-bottom: none;
+                padding-bottom: 5px;
+            }
+
+            .tokusho-table td {
+                border-top: none;
+                padding-top: 5px;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="header-logo">
+                <img src="images/product/logo.png" alt="ヌレクリア">
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ナビゲーション -->
+    <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="blog.html">コラム</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="https://amzn.to/4vIo0ef" class="nav-cta" target="_blank" rel="noopener">購入はこちら</a></li>
+        </ul>
+    </nav>
+
+    <div class="tokusho-page" style="padding-top: 50px;">
+        <h1>特定商取引法に基づく表記</h1>
+
+        <table class="tokusho-table">
+            <tr>
+                <th>販売業者</th>
+                <td>株式会社テマヒマ</td>
+            </tr>
+            <tr>
+                <th>運営統括責任者</th>
+                <td>株式会社テマヒマ 代表</td>
+            </tr>
+            <tr>
+                <th>所在地</th>
+                <td>〒150-0043<br>東京都渋谷区道玄坂1−10−8 渋谷道玄坂東急ビル2F-C</td>
+            </tr>
+            <tr>
+                <th>電話番号</th>
+                <td>03-6773-8140</td>
+            </tr>
+            <tr>
+                <th>メールアドレス</th>
+                <td><a href="mailto:d2c@temahima.co.jp">d2c@temahima.co.jp</a></td>
+            </tr>
+            <tr>
+                <th>販売価格</th>
+                <td>各商品ページに記載の通り</td>
+            </tr>
+            <tr>
+                <th>商品代金以外の必要料金</th>
+                <td>送料、消費税（商品価格に含む）</td>
+            </tr>
+            <tr>
+                <th>支払方法</th>
+                <td>Amazonでの販売のため、Amazonの定める支払方法に準じます</td>
+            </tr>
+            <tr>
+                <th>支払時期</th>
+                <td>Amazonでの販売のため、Amazonの定める支払時期に準じます</td>
+            </tr>
+            <tr>
+                <th>商品の引渡時期</th>
+                <td>Amazonでの販売のため、Amazonの定める配送スケジュールに準じます</td>
+            </tr>
+            <tr>
+                <th>返品・交換について</th>
+                <td>
+                    商品に欠陥がある場合を除き、お客様都合による返品・交換はお受けできません。<br>
+                    商品に欠陥がある場合、または配送中の破損等があった場合は、到着後7日以内にメールにてご連絡ください。<br>
+                    ※未開封・未使用の商品に限ります
+                </td>
+            </tr>
+        </table>
+
+        <div class="back-link">
+            <a href="index.html">トップページに戻る</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-copyright">&copy; 2026 ヌレクリア All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ハンバーガーメニュー
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // メニュー外クリックで閉じる
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

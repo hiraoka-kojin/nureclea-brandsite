@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ｜ヌレクリア</title>
+    <meta name="description" content="ヌレクリアへのお問い合わせページ">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="header-logo">
+                <img src="images/product/logo.png" alt="ヌレクリア">
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ナビゲーション -->
+    <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="blog.html">コラム</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="https://amzn.to/4vIo0ef" class="nav-cta" target="_blank" rel="noopener">購入はこちら</a></li>
+        </ul>
+    </nav>
+
+    <!-- お問い合わせ -->
+    <section class="contact-page" style="padding-top: 100px;">
+        <div class="container">
+            <h1 class="page-title">お問い合わせ</h1>
+            <p class="page-lead">商品に関するご質問やご相談は、以下のフォームまたはメールにてお気軽にお問い合わせください。</p>
+
+            <div class="contact-form-wrapper">
+                <h2>お問い合わせフォーム</h2>
+                <form class="contact-form" action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">お名前 <span class="required">必須</span></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">メールアドレス <span class="required">必須</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">件名 <span class="required">必須</span></label>
+                        <select id="subject" name="subject" required>
+                            <option value="">選択してください</option>
+                            <option value="product">商品について</option>
+                            <option value="order">ご注文について</option>
+                            <option value="monitor">モニターについて</option>
+                            <option value="other">その他</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">お問い合わせ内容 <span class="required">必須</span></label>
+                        <textarea id="message" name="message" rows="8" required></textarea>
+                    </div>
+
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary">送信する</button>
+                    </div>
+
+                    <p class="form-note">※現在、お問い合わせフォームは準備中です。お手数ですが、メールにてお問い合わせください。</p>
+                </form>
+            </div>
+
+            <div class="back-link">
+                <a href="index.html">← トップページに戻る</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand">
+                <h2>ヌレクリア</h2>
+                <p>女性のためのフェムケアクリーム</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://x.com/nureclea" target="_blank" rel="noopener">公式X（@nureclea）</a>
+                <a href="tokusho.html">特定商取引法に基づく表記</a>
+                <a href="contact.html">お問い合わせ</a>
+            </div>
+            <div class="footer-contact">
+                <p>お問い合わせ: <a href="mailto:d2c@temahima.co.jp">d2c@temahima.co.jp</a></p>
+            </div>
+            <p class="footer-copyright">&copy; 2026 ヌレクリア All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ハンバーガーメニュー
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // メニュー外クリックで閉じる
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

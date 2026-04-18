@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Write(~/projects/**)",
+      "Bash(git:*)",
+      "Bash(npm:*)",
+      "Bash(node:*)",
+      "Bash(python:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "WebSearch"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(wget:*)",
+      "Bash(ssh:*)",
+      "Bash(scp:*)",
+      "Write(~/.ssh/**)",
+      "Write(~/.env)",
+      "Write(/etc/**)",
+      "Read(~/.ssh/**)",
+      "Read(~/.config/gcloud/**)"
+    ]
+  }
+}

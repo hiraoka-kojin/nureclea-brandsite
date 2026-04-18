@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フェムケアコラム｜ヌレクリア - 女性の健康と美をサポートする情報メディア</title>
+    <meta name="description" content="フェムケア、デリケートゾーンケア、感度アップなど、女性の健康と美をサポートする専門コラム。正しい知識と実践方法をわかりやすく解説します。">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .blog-page-hero {
+            width: 100%;
+            height: 300px;
+            margin-top: 80px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg,
+                #faf8f6 0%,
+                #f5ebe8 25%,
+                #e8b4a8 50%,
+                #f5ebe8 75%,
+                #faf8f6 100%
+            );
+        }
+
+        .blog-page-hero::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(
+                circle at 30% 50%,
+                rgba(232, 180, 168, 0.3) 0%,
+                transparent 50%
+            );
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .blog-page-hero::after {
+            content: '';
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(
+                circle at 70% 60%,
+                rgba(201, 168, 160, 0.2) 0%,
+                transparent 50%
+            );
+            animation: float 15s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(-10px, -10px) scale(1.05);
+            }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(250, 248, 246, 0.85) 0%,
+                    rgba(250, 248, 246, 0.75) 50%,
+                    rgba(250, 248, 246, 0.85) 100%
+                );
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 0 20px;
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            color: #8a6d6d;
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            color: #4a4a4a;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .blog-page {
+            padding-top: 0;
+            min-height: 100vh;
+        }
+
+        .blog-list {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #faf8f6 0%, #f5ebe8 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .blog-card-content {
+            padding: 25px;
+        }
+
+        .blog-card-category {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: #e8b4a8;
+            background: rgba(232, 180, 168, 0.1);
+            padding: 4px 12px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .blog-card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d2d2d;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .blog-card-excerpt {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .blog-card-date {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .blog-page-hero {
+                height: 250px;
+                margin-top: 70px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+                letter-spacing: 0.1em;
+            }
+
+            .hero-content p {
+                font-size: 0.9rem;
+            }
+
+            .blog-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="header-logo">
+                <img src="images/product/logo.png" alt="ヌレクリア">
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ナビゲーション -->
+    <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="blog.html">コラム</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="https://amzn.to/4vIo0ef" class="nav-cta" target="_blank" rel="noopener">購入はこちら</a></li>
+        </ul>
+    </nav>
+
+    <!-- ヘッダー画像 -->
+    <div class="blog-page-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>フェムケアコラム</h1>
+            <p>フェムケア、デリケートゾーンケア、感度アップのtipsなど<br>女性の健康と美をサポートする専門情報をお届けします。</p>
+        </div>
+    </div>
+
+    <!-- ブログページ -->
+    <section class="blog-page">
+
+        <div class="container">
+            <div class="blog-list">
+                <!-- 記事カード1 -->
+                <article class="blog-card">
+                    <a href="blog-blood-flow.html">
+                        <div class="blog-card-image">
+                            <img src="images/blog/blood-flow-sensitivity.png" alt="感度アップのカギは血流改善！今日からできる5つの方法">
+                        </div>
+                        <div class="blog-card-content">
+                            <span class="blog-card-category">感度アップ</span>
+                            <h2 class="blog-card-title">感度アップのカギは血流改善！今日からできる5つの方法</h2>
+                            <p class="blog-card-excerpt">血流を改善することで感度が高まる理由と、日常生活で実践できる具体的な方法をご紹介します。</p>
+                            <time class="blog-card-date">2026.04.17</time>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 記事カード2 -->
+                <article class="blog-card">
+                    <a href="blog-dryness.html">
+                        <div class="blog-card-image">
+                            <img src="images/blog/dryness-care.png" alt="デリケートゾーンの乾燥はなぜ起こる？原因と正しい保湿ケア方法">
+                        </div>
+                        <div class="blog-card-content">
+                            <span class="blog-card-category">フェムケア</span>
+                            <h2 class="blog-card-title">デリケートゾーンの乾燥はなぜ起こる？原因と正しい保湿ケア方法</h2>
+                            <p class="blog-card-excerpt">デリケートゾーンの乾燥に悩む女性へ。原因から保湿ケアの方法まで、詳しく解説します。</p>
+                            <time class="blog-card-date">2026.04.17</time>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 記事カード3 -->
+                <article class="blog-card">
+                    <a href="blog-femcare-basic.html">
+                        <div class="blog-card-image">
+                            <img src="images/blog/femcare-basic.png" alt="フェムケアとは？初心者でもわかる基本と始め方">
+                        </div>
+                        <div class="blog-card-content">
+                            <span class="blog-card-category">フェムケア</span>
+                            <h2 class="blog-card-title">フェムケアとは？初心者でもわかる基本と始め方</h2>
+                            <p class="blog-card-excerpt">話題のフェムケアについて、基本から実践方法まで初心者向けに解説します。</p>
+                            <time class="blog-card-date">2026.04.17</time>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 記事カード4 -->
+                <article class="blog-card">
+                    <a href="blog-pelvic-training.html">
+                        <div class="blog-card-image">
+                            <img src="images/blog/pelvic-training.png" alt="膣トレとは？初心者でもできる正しいやり方と5つの効果">
+                        </div>
+                        <div class="blog-card-content">
+                            <span class="blog-card-category">感度アップ</span>
+                            <h2 class="blog-card-title">膣トレとは？初心者でもできる正しいやり方と5つの効果</h2>
+                            <p class="blog-card-excerpt">膣トレ（骨盤底筋トレーニング）の正しいやり方を初心者向けに解説します。</p>
+                            <time class="blog-card-date">2026.04.17</time>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- 記事カード5 -->
+                <article class="blog-card">
+                    <a href="blog-dark-spots.html">
+                        <div class="blog-card-image">
+                            <img src="images/blog/dark-spots-care.png" alt="デリケートゾーンの黒ずみはなぜできる？原因とケア方法">
+                        </div>
+                        <div class="blog-card-content">
+                            <span class="blog-card-category">フェムケア</span>
+                            <h2 class="blog-card-title">デリケートゾーンの黒ずみはなぜできる？原因とケア方法</h2>
+                            <p class="blog-card-excerpt">デリケートゾーンの黒ずみに悩む女性へ。色素沈着が起こる原因と、自宅でできるケア方法を解説します。</p>
+                            <time class="blog-card-date">2026.04.17</time>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand">
+                <h2>ヌレクリア</h2>
+                <p>女性のためのフェムケアクリーム</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://x.com/nureclea" target="_blank" rel="noopener">公式X（@nureclea）</a>
+                <a href="contact.html">お問い合わせ</a>
+                <a href="tokusho.html">特定商取引法に基づく表記</a>
+            </div>
+            <div class="footer-contact">
+                <p>お問い合わせ: <a href="mailto:d2c@temahima.co.jp">d2c@temahima.co.jp</a></p>
+            </div>
+            <p class="footer-copyright">&copy; 2026 ヌレクリア All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ハンバーガーメニュー
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // メニュー外クリックで閉じる
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

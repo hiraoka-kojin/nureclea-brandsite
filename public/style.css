@@ -1,0 +1,1095 @@
+/* ==========================================
+   リセット & 基本設定
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    line-height: 1.8;
+    color: #2d2d2d;
+    background-color: #faf8f6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: #c9a8a0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #e8b4a8;
+}
+
+/* ==========================================
+   ヘッダー & ナビゲーション
+   ========================================== */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo img {
+    height: 28px;
+    display: block;
+}
+
+.hamburger {
+    width: 30px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #2d2d2d;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.4s ease;
+    z-index: 999;
+    padding: 100px 0 40px;
+}
+
+.nav-menu.active {
+    right: 0;
+}
+
+.nav-list {
+    list-style: none;
+}
+
+.nav-list li {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.nav-list a {
+    display: block;
+    padding: 20px 40px;
+    color: #2d2d2d;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    transition: all 0.3s ease;
+}
+
+.nav-list a:hover {
+    background-color: #faf8f6;
+    color: #e8b4a8;
+}
+
+.nav-cta {
+    background: linear-gradient(135deg, #e8b4a8 0%, #d4a5a5 100%);
+    color: #fff !important;
+    font-weight: 500;
+    margin: 20px;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.nav-cta:hover {
+    background: linear-gradient(135deg, #d9a090 0%, #c08e8e 100%) !important;
+    color: #fff !important;
+}
+
+/* ==========================================
+   レイアウト
+   ========================================== */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 60px;
+    background: linear-gradient(135deg, #c9a8a0 0%, #e8b4a8 50%, #d4a5a5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #e8b4a8, transparent);
+}
+
+/* ==========================================
+   ボタン
+   ========================================== */
+.btn {
+    display: inline-block;
+    padding: 18px 48px;
+    border-radius: 50px;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.4s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+}
+
+.btn-primary {
+    background-color: #e8b4a8;
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(232, 180, 168, 0.25);
+}
+
+.btn-primary:hover {
+    background-color: #d9a090;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(232, 180, 168, 0.35);
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #c9a8a0;
+    border: 1.5px solid #c9a8a0;
+}
+
+.btn-secondary:hover {
+    background-color: #c9a8a0;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   ファーストビュー
+   ========================================== */
+.hero {
+    background-image: url('images/product/main.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(250, 248, 246, 0.85) 0%,
+        rgba(250, 248, 246, 0.5) 40%,
+        rgba(250, 248, 246, 0.3) 70%,
+        rgba(250, 248, 246, 0.4) 100%
+    );
+    pointer-events: none;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.catchcopy {
+    font-size: 3.2rem;
+    background: linear-gradient(135deg, #c9a8a0 0%, #e8b4a8 50%, #d4a5a5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 24px;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    line-height: 1.5;
+    text-shadow: none;
+    position: relative;
+    padding: 30px 0;
+}
+
+.catchcopy::before,
+.catchcopy::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #e8b4a8, transparent);
+}
+
+.catchcopy::before {
+    top: 0;
+}
+
+.catchcopy::after {
+    bottom: 0;
+}
+
+.subcopy {
+    font-size: 1.1rem;
+    color: #8a8a8a;
+    letter-spacing: 0.12em;
+    font-weight: 400;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.6);
+    font-style: italic;
+}
+
+/* ==========================================
+   こんな方へ
+   ========================================== */
+.target {
+    background-color: #faf8f6;
+}
+
+.target-list {
+    list-style: none;
+    max-width: 650px;
+    margin: 0 auto 50px;
+}
+
+.target-list li {
+    padding: 20px 30px;
+    margin-bottom: 16px;
+    background-color: #fff;
+    border-left: 3px solid #e8b4a8;
+    border-radius: 0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    font-size: 1.05rem;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+
+.target-list li:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.target-message {
+    text-align: center;
+    font-size: 1.15rem;
+    color: #2d2d2d;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+}
+
+/* ==========================================
+   商品の特徴
+   ========================================== */
+.features {
+    background-color: #fff;
+    position: relative;
+}
+
+.features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    pointer-events: none;
+}
+
+.features .container {
+    position: relative;
+    z-index: 1;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-bottom: 70px;
+}
+
+.feature-item {
+    padding: 50px 40px;
+    background-color: #faf8f6;
+    border-radius: 0;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    background-color: #f5f1ed;
+}
+
+.feature-item h3 {
+    font-size: 1.4rem;
+    color: #2d2d2d;
+    margin-bottom: 20px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+}
+
+.feature-item p {
+    color: #6a6a6a;
+    line-height: 2;
+    letter-spacing: 0.05em;
+}
+
+.usage-guide {
+    max-width: 900px;
+    margin: 60px auto 0;
+    padding: 0;
+}
+
+.usage-guide h3 {
+    font-size: 1.8rem;
+    color: #2d2d2d;
+    margin-bottom: 50px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-align: center;
+}
+
+.usage-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.usage-step {
+    text-align: center;
+}
+
+.step-image {
+    width: 100%;
+    aspect-ratio: 1;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.step-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.usage-step h4 {
+    font-size: 1.1rem;
+    color: #2d2d2d;
+    margin-bottom: 12px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+.usage-step p {
+    color: #6a6a6a;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+}
+
+.usage-note {
+    text-align: center;
+    color: #6a6a6a;
+    line-height: 2;
+    letter-spacing: 0.05em;
+    padding: 30px 40px;
+    background-color: #faf8f6;
+    border-radius: 0;
+}
+
+/* ==========================================
+   こだわり・成分
+   ========================================== */
+.ingredients {
+    background-color: #faf8f6;
+    position: relative;
+}
+
+.ingredients::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(250, 248, 246, 0.85);
+    pointer-events: none;
+}
+
+.ingredients .container {
+    position: relative;
+    z-index: 1;
+}
+
+.ingredient-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.ingredient-item {
+    padding: 50px 40px;
+    background-color: #fff;
+    border-radius: 0;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.ingredient-item:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.ingredient-item h3 {
+    font-size: 1.3rem;
+    color: #2d2d2d;
+    margin-bottom: 20px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+}
+
+.ingredient-item p {
+    color: #6a6a6a;
+    line-height: 2;
+    letter-spacing: 0.05em;
+}
+
+.ingredient-note {
+    text-align: center;
+    color: #ababab;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+
+/* ==========================================
+   ブランドストーリー
+   ========================================== */
+.story {
+    background-color: #fff;
+}
+
+.story-content {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.story-content p {
+    margin-bottom: 30px;
+    color: #6a6a6a;
+    font-size: 1.1rem;
+    line-height: 2.4;
+    letter-spacing: 0.08em;
+}
+
+/* ==========================================
+   購入方法
+   ========================================== */
+.purchase {
+    background-color: #faf8f6;
+    text-align: center;
+}
+
+.purchase-text {
+    font-size: 1.15rem;
+    margin-bottom: 40px;
+    color: #6a6a6a;
+    letter-spacing: 0.08em;
+}
+
+.purchase-note {
+    margin-top: 30px;
+    color: #ababab;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+
+/* ==========================================
+   お知らせ
+   ========================================== */
+.news {
+    background-color: #fff;
+    padding: 80px 0;
+}
+
+.news-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.news-item {
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+    margin-bottom: 16px;
+    background-color: #faf8f6;
+    border-left: 3px solid #e8b4a8;
+    transition: all 0.3s ease;
+}
+
+.news-item:hover {
+    background-color: #f5f1ed;
+    transform: translateX(4px);
+}
+
+.news-date {
+    font-size: 0.9rem;
+    color: #8a8a8a;
+    margin-right: 20px;
+    min-width: 100px;
+    letter-spacing: 0.05em;
+}
+
+.news-category {
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: #e8b4a8;
+    color: #fff;
+    font-size: 0.85rem;
+    border-radius: 3px;
+    margin-right: 20px;
+    letter-spacing: 0.05em;
+}
+
+.news-category.highlight {
+    background-color: #d4a5a5;
+    font-weight: 500;
+}
+
+.news-title {
+    color: #2d2d2d;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    flex: 1;
+}
+
+.news-title:hover {
+    color: #e8b4a8;
+}
+
+/* ==========================================
+   旧モニター募集（削除予定）
+   ========================================== */
+.monitor {
+    background-color: #fff;
+}
+
+.monitor-lead {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 50px;
+    color: #2d2d2d;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+}
+
+.monitor-content {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 60px 50px;
+    background-color: #faf8f6;
+    border-radius: 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+}
+
+.monitor-content h3 {
+    font-size: 1.4rem;
+    color: #2d2d2d;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+}
+
+.monitor-list {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.monitor-list li {
+    padding: 16px 24px;
+    margin-bottom: 14px;
+    background-color: #fff;
+    border-left: 3px solid #e8b4a8;
+    border-radius: 0;
+    letter-spacing: 0.05em;
+    line-height: 1.9;
+}
+
+.monitor-note {
+    text-align: center;
+    color: #6a6a6a;
+    margin-bottom: 40px;
+    line-height: 2.2;
+    letter-spacing: 0.05em;
+}
+
+.monitor-content .btn {
+    display: block;
+    margin: 0 auto;
+    max-width: 320px;
+}
+
+/* ==========================================
+   ページ共通（サブページ用）
+   ========================================== */
+.page-header {
+    background-color: #fff;
+    padding: 30px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #2d2d2d;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+}
+
+.page-title {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #c9a8a0 0%, #e8b4a8 50%, #d4a5a5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+}
+
+.page-lead {
+    text-align: center;
+    color: #6a6a6a;
+    font-size: 1.05rem;
+    margin-bottom: 50px;
+    letter-spacing: 0.05em;
+    line-height: 1.8;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.back-link a {
+    color: #c9a8a0;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+}
+
+/* モニター募集ページ */
+.monitor-page {
+    padding: 80px 0;
+    background-color: #faf8f6;
+}
+
+.monitor-content-page {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 60px 50px;
+    border-radius: 0;
+}
+
+.monitor-content-page h2 {
+    font-size: 1.6rem;
+    color: #2d2d2d;
+    margin: 40px 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    letter-spacing: 0.08em;
+}
+
+.monitor-content-page h2:first-child {
+    margin-top: 0;
+}
+
+.monitor-list-page {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.monitor-list-page li {
+    padding: 14px 20px;
+    margin-bottom: 12px;
+    background-color: #faf8f6;
+    border-left: 3px solid #e8b4a8;
+    letter-spacing: 0.05em;
+    line-height: 1.8;
+}
+
+.monitor-note-page {
+    color: #6a6a6a;
+    line-height: 2;
+    letter-spacing: 0.05em;
+    margin-bottom: 30px;
+}
+
+.monitor-cta {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.monitor-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.monitor-table th,
+.monitor-table td {
+    padding: 16px 20px;
+    border: 1px solid #f0f0f0;
+    text-align: left;
+}
+
+.monitor-table th {
+    background-color: #faf8f6;
+    font-weight: 500;
+    color: #2d2d2d;
+    width: 30%;
+    letter-spacing: 0.05em;
+}
+
+.monitor-table td {
+    color: #6a6a6a;
+    letter-spacing: 0.05em;
+}
+
+/* お問い合わせページ */
+.contact-page {
+    padding: 80px 0;
+    background-color: #faf8f6;
+}
+
+.contact-info {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    text-align: center;
+    background-color: #fff;
+    padding: 40px;
+}
+
+.contact-info h2 {
+    font-size: 1.4rem;
+    color: #2d2d2d;
+    margin-bottom: 20px;
+    letter-spacing: 0.08em;
+}
+
+.contact-email {
+    font-size: 1.3rem;
+    margin: 20px 0;
+}
+
+.contact-email a {
+    color: #e8b4a8;
+    font-weight: 500;
+}
+
+.contact-note {
+    color: #8a8a8a;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+
+.contact-form-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 60px 50px;
+}
+
+.contact-form-wrapper h2 {
+    font-size: 1.6rem;
+    color: #2d2d2d;
+    margin-bottom: 30px;
+    letter-spacing: 0.08em;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2d2d2d;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+.required {
+    color: #e8b4a8;
+    font-size: 0.85rem;
+    margin-left: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #e8b4a8;
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.form-note {
+    text-align: center;
+    color: #8a8a8a;
+    font-size: 0.9rem;
+    margin-top: 20px;
+    letter-spacing: 0.05em;
+}
+
+/* ==========================================
+   フッター
+   ========================================== */
+.footer {
+    background-color: #2d2d2d;
+    color: #f0f0f0;
+    padding: 70px 0 40px;
+    text-align: center;
+}
+
+.footer-brand h2 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+}
+
+.footer-brand p {
+    margin-bottom: 40px;
+    opacity: 0.8;
+    letter-spacing: 0.08em;
+    font-size: 0.95rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #f0f0f0;
+    opacity: 0.8;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    color: #e8b4a8;
+}
+
+.footer-contact {
+    margin-bottom: 40px;
+}
+
+.footer-contact a {
+    color: #f0f0f0;
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+.footer-contact a:hover {
+    opacity: 1;
+    color: #e8b4a8;
+}
+
+.footer-copyright {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    letter-spacing: 0.05em;
+}
+
+/* ==========================================
+   レスポンシブ対応
+   ========================================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 24px;
+    }
+
+    section {
+        padding: 70px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .catchcopy {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .subcopy {
+        font-size: 1rem;
+        margin-bottom: 50px;
+    }
+
+    .hero {
+        padding: 80px 0 60px;
+    }
+
+    .feature-grid,
+    .ingredient-list {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .feature-item,
+    .ingredient-item {
+        padding: 40px 30px;
+    }
+
+    .usage,
+    .monitor-content {
+        padding: 40px 30px;
+    }
+
+    .btn {
+        padding: 15px 36px;
+        font-size: 0.95rem;
+    }
+
+    .story-content p {
+        font-size: 1.05rem;
+        line-height: 2.2;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 1.7rem;
+    }
+
+    .catchcopy {
+        font-size: 1.6rem;
+        letter-spacing: 0.08em;
+    }
+
+    .subcopy {
+        font-size: 0.95rem;
+    }
+
+    .target-list li {
+        padding: 16px 20px;
+        font-size: 1rem;
+    }
+
+    .feature-item,
+    .ingredient-item,
+    .usage,
+    .monitor-content {
+        padding: 30px 24px;
+    }
+
+    .story-content p {
+        font-size: 1rem;
+    }
+}

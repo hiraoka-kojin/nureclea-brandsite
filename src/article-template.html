@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}}｜ヌレクリア</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    <!-- SEO / OGP -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{TITLE}}">
+    <meta property="og:description" content="{{DESCRIPTION}}">
+    <meta property="og:url" content="https://nureclea.com/{{FILENAME}}">
+    <meta property="og:site_name" content="ヌレクリア">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@nureclea">
+    <meta name="twitter:title" content="{{TITLE}}">
+    <meta name="twitter:description" content="{{DESCRIPTION}}">
+    <link rel="canonical" href="https://nureclea.com/{{FILENAME}}">
+    <!-- 構造化データ（SEO・LLMO） -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "{{TITLE}}",
+      "description": "{{DESCRIPTION}}",
+      "datePublished": "{{PUBLISH_DATE}}",
+      "dateModified": "{{PUBLISH_DATE}}",
+      "author": { "@type": "Organization", "name": "ヌレクリア編集部", "url": "https://nureclea.com" },
+      "publisher": { "@type": "Organization", "name": "ヌレクリア", "url": "https://nureclea.com" },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://nureclea.com/{{FILENAME}}" },
+      "articleSection": "{{CATEGORY}}"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "{{FAQ1_Q}}",
+          "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ1_A}}" }
+        },
+        {
+          "@type": "Question",
+          "name": "{{FAQ2_Q}}",
+          "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ2_A}}" }
+        },
+        {
+          "@type": "Question",
+          "name": "{{FAQ3_Q}}",
+          "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ3_A}}" }
+        },
+        {
+          "@type": "Question",
+          "name": "{{FAQ4_Q}}",
+          "acceptedAnswer": { "@type": "Answer", "text": "{{FAQ4_A}}" }
+        }
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .article-container { max-width: 800px; margin: 0 auto; padding: 120px 20px 80px; }
+        .article-category { display: inline-block; font-size: 0.85rem; color: #e8b4a8; background: rgba(232, 180, 168, 0.1); padding: 6px 16px; border-radius: 15px; margin-bottom: 20px; font-weight: 500; }
+        .article-title { font-size: 2.2rem; font-weight: 600; color: #2d2d2d; line-height: 1.6; margin-bottom: 15px; }
+        .article-date { font-size: 0.9rem; color: #999; margin-bottom: 30px; display: block; }
+        .article-lead { font-size: 1.1rem; color: #555; line-height: 1.9; margin-bottom: 50px; padding: 25px; background: #faf8f6; border-left: 4px solid #e8b4a8; border-radius: 4px; }
+        .article-content { font-size: 1rem; color: #2d2d2d; line-height: 1.9; }
+        .article-content h2 { font-size: 1.6rem; font-weight: 600; color: #2d2d2d; margin: 50px 0 25px; padding-bottom: 15px; border-bottom: 2px solid #f5ebe8; }
+        .article-content h3 { font-size: 1.3rem; font-weight: 600; color: #2d2d2d; margin: 40px 0 20px; }
+        .article-content p { margin-bottom: 25px; }
+        .article-content ul, .article-content ol { margin: 25px 0; padding-left: 25px; }
+        .article-content li { margin-bottom: 12px; }
+        .highlight-box { background: #faf8f6; padding: 25px; border-radius: 8px; margin: 30px 0; }
+        .warning-box { background: #fff4f0; padding: 25px; border-radius: 8px; border-left: 4px solid #e8b4a8; margin: 30px 0; }
+        .faq-section { margin-top: 50px; padding: 40px; background: #faf8f6; border-radius: 8px; }
+        .faq-item { margin-bottom: 30px; }
+        .faq-question { font-size: 1.1rem; font-weight: 600; color: #c9a8a0; margin-bottom: 10px; }
+        .faq-answer { color: #555; line-height: 1.8; }
+        .cta-box { background: linear-gradient(135deg, #f5ebe8 0%, #faf8f6 100%); padding: 40px; border-radius: 8px; text-align: center; margin: 50px 0; }
+        .cta-box h3 { font-size: 1.4rem; margin-bottom: 15px; color: #2d2d2d; }
+        .cta-box p { margin-bottom: 25px; color: #555; }
+        .cta-box .btn { display: inline-block; padding: 15px 40px; background: #e8b4a8; color: #fff; border-radius: 30px; font-weight: 600; transition: all 0.3s; }
+        .cta-box .btn:hover { background: #d4a5a5; transform: translateY(-2px); }
+        .article-back { text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1px solid #e8e8e8; }
+        .article-back a { display: inline-block; padding: 12px 40px; background: #faf8f6; color: #c9a8a0; border-radius: 25px; transition: all 0.3s; font-weight: 600; }
+        .article-back a:hover { background: #e8b4a8; color: #fff; }
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.8rem; }
+            .article-lead { font-size: 1rem; padding: 20px; }
+            .article-content h2 { font-size: 1.4rem; }
+            .article-content h3 { font-size: 1.2rem; }
+            .cta-box, .faq-section { padding: 25px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="header-logo"><img src="images/product/logo.png" alt="ヌレクリア"></a>
+            <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+    <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="blog.html">コラム</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="https://amzn.to/4vIo0ef" class="nav-cta" target="_blank" rel="noopener">購入はこちら</a></li>
+        </ul>
+    </nav>
+
+    <article class="article-container">
+        <span class="article-category">{{CATEGORY}}</span>
+        <h1 class="article-title">{{TITLE}}</h1>
+        <time class="article-date">{{PUBLISH_DATE_DISPLAY}}</time>
+
+        <div class="article-lead">
+            {{LEAD}}
+        </div>
+
+        <div class="article-content">
+
+            <h2>{{H2_1}}</h2>
+            <h3>{{H3_1_1}}</h3>
+            <p>{{CONTENT}}</p>
+
+            <!-- highlight-box 例 -->
+            <div class="highlight-box">
+                <p><strong>ポイント：</strong></p>
+                <ul>
+                    <li>項目1</li>
+                    <li>項目2</li>
+                </ul>
+            </div>
+
+            <!-- warning-box 例 -->
+            <div class="warning-box">
+                <p><strong>注意：</strong></p>
+                <p>注意事項の内容</p>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-box">
+                <h3>ヌレクリアで毎日のフェムケアを</h3>
+                <p>
+                    ヌレクリアは、ヒアルロン酸・水溶性コラーゲン・β-グルカンなど豊富な保湿成分を配合。
+                    感度ケアと保湿ケアを同時に叶える新しいフェムケアクリームです。
+                </p>
+                <a href="index.html#features" class="btn">商品について詳しく見る</a>
+            </div>
+
+            <!-- FAQ（class名を正確に守ること：faq-section > faq-item > faq-question/faq-answer） -->
+            <div class="faq-section">
+                <h2 style="margin-top: 0;">よくある質問</h2>
+
+                <div class="faq-item">
+                    <p class="faq-question">Q. {{FAQ1_Q}}</p>
+                    <p class="faq-answer">A. {{FAQ1_A}}</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-question">Q. {{FAQ2_Q}}</p>
+                    <p class="faq-answer">A. {{FAQ2_A}}</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-question">Q. {{FAQ3_Q}}</p>
+                    <p class="faq-answer">A. {{FAQ3_A}}</p>
+                </div>
+                <div class="faq-item">
+                    <p class="faq-question">Q. {{FAQ4_Q}}</p>
+                    <p class="faq-answer">A. {{FAQ4_A}}</p>
+                </div>
+            </div>
+
+            <h2>まとめ</h2>
+            <p>{{SUMMARY}}</p>
+
+            <div class="article-back">
+                <a href="blog.html">← コラム一覧に戻る</a>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand"><h2>ヌレクリア</h2><p>女性のためのフェムケアクリーム</p></div>
+            <div class="footer-links">
+                <a href="https://x.com/nureclea" target="_blank" rel="noopener">公式X（@nureclea）</a>
+                <a href="contact.html">お問い合わせ</a>
+                <a href="tokusho.html">特定商取引法に基づく表記</a>
+            </div>
+            <div class="footer-contact"><p>お問い合わせ: <a href="mailto:d2c@temahima.co.jp">d2c@temahima.co.jp</a></p></div>
+            <p class="footer-copyright">&copy; 2026 ヌレクリア All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navMenu.classList.toggle('active'); });
+        document.addEventListener('click', (e) => { if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) { hamburger.classList.remove('active'); navMenu.classList.remove('active'); } });
+    </script>
+</body>
+</html>

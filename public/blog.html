@@ -240,83 +240,9 @@
 
     <!-- ブログページ -->
     <section class="blog-page">
-
         <div class="container">
-            <div class="blog-list">
-                <!-- 記事カード1 -->
-                <article class="blog-card">
-                    <a href="blog-blood-flow.html">
-                        <div class="blog-card-image">
-                            <img src="images/blog/blood-flow-sensitivity.png" alt="感度アップのカギは血流改善！今日からできる5つの方法">
-                        </div>
-                        <div class="blog-card-content">
-                            <span class="blog-card-category">感度アップ</span>
-                            <h2 class="blog-card-title">感度アップのカギは血流改善！今日からできる5つの方法</h2>
-                            <p class="blog-card-excerpt">血流を改善することで感度が高まる理由と、日常生活で実践できる具体的な方法をご紹介します。</p>
-                            <time class="blog-card-date">2026.04.17</time>
-                        </div>
-                    </a>
-                </article>
-
-                <!-- 記事カード2 -->
-                <article class="blog-card">
-                    <a href="blog-dryness.html">
-                        <div class="blog-card-image">
-                            <img src="images/blog/dryness-care.png" alt="デリケートゾーンの乾燥はなぜ起こる？原因と正しい保湿ケア方法">
-                        </div>
-                        <div class="blog-card-content">
-                            <span class="blog-card-category">フェムケア</span>
-                            <h2 class="blog-card-title">デリケートゾーンの乾燥はなぜ起こる？原因と正しい保湿ケア方法</h2>
-                            <p class="blog-card-excerpt">デリケートゾーンの乾燥に悩む女性へ。原因から保湿ケアの方法まで、詳しく解説します。</p>
-                            <time class="blog-card-date">2026.04.17</time>
-                        </div>
-                    </a>
-                </article>
-
-                <!-- 記事カード3 -->
-                <article class="blog-card">
-                    <a href="blog-femcare-basic.html">
-                        <div class="blog-card-image">
-                            <img src="images/blog/femcare-basic.png" alt="フェムケアとは？初心者でもわかる基本と始め方">
-                        </div>
-                        <div class="blog-card-content">
-                            <span class="blog-card-category">フェムケア</span>
-                            <h2 class="blog-card-title">フェムケアとは？初心者でもわかる基本と始め方</h2>
-                            <p class="blog-card-excerpt">話題のフェムケアについて、基本から実践方法まで初心者向けに解説します。</p>
-                            <time class="blog-card-date">2026.04.17</time>
-                        </div>
-                    </a>
-                </article>
-
-                <!-- 記事カード4 -->
-                <article class="blog-card">
-                    <a href="blog-pelvic-training.html">
-                        <div class="blog-card-image">
-                            <img src="images/blog/pelvic-training.png" alt="膣トレとは？初心者でもできる正しいやり方と5つの効果">
-                        </div>
-                        <div class="blog-card-content">
-                            <span class="blog-card-category">感度アップ</span>
-                            <h2 class="blog-card-title">膣トレとは？初心者でもできる正しいやり方と5つの効果</h2>
-                            <p class="blog-card-excerpt">膣トレ（骨盤底筋トレーニング）の正しいやり方を初心者向けに解説します。</p>
-                            <time class="blog-card-date">2026.04.17</time>
-                        </div>
-                    </a>
-                </article>
-
-                <!-- 記事カード5 -->
-                <article class="blog-card">
-                    <a href="blog-dark-spots.html">
-                        <div class="blog-card-image">
-                            <img src="images/blog/dark-spots-care.png" alt="デリケートゾーンの黒ずみはなぜできる？原因とケア方法">
-                        </div>
-                        <div class="blog-card-content">
-                            <span class="blog-card-category">フェムケア</span>
-                            <h2 class="blog-card-title">デリケートゾーンの黒ずみはなぜできる？原因とケア方法</h2>
-                            <p class="blog-card-excerpt">デリケートゾーンの黒ずみに悩む女性へ。色素沈着が起こる原因と、自宅でできるケア方法を解説します。</p>
-                            <time class="blog-card-date">2026.04.17</time>
-                        </div>
-                    </a>
-                </article>
+            <div class="blog-list" id="blog-list">
+                <p style="text-align:center; color:#999; padding: 40px 0;">記事を読み込み中...</p>
             </div>
         </div>
     </section>
@@ -341,6 +267,41 @@
     </footer>
 
     <script>
+        // 記事一覧をJSONから読み込み、公開日が今日以前のもののみ表示
+        fetch('articles.json')
+            .then(r => r.json())
+            .then(articles => {
+                const today = new Date().toISOString().split('T')[0];
+                const published = articles
+                    .filter(a => a.publishDate <= today)
+                    .sort((a, b) => b.publishDate.localeCompare(a.publishDate));
+
+                const list = document.getElementById('blog-list');
+                if (published.length === 0) {
+                    list.innerHTML = '<p style="text-align:center; color:#999; padding: 40px 0;">記事はまだありません。</p>';
+                    return;
+                }
+                list.innerHTML = published.map(a => `
+                    <article class="blog-card">
+                        <a href="${a.file}">
+                            <div class="blog-card-image">
+                                ${a.image ? `<img src="${a.image}" alt="${a.title}" loading="lazy">` : ''}
+                            </div>
+                            <div class="blog-card-content">
+                                <span class="blog-card-category">${a.category}</span>
+                                <h2 class="blog-card-title">${a.title}</h2>
+                                <p class="blog-card-excerpt">${a.excerpt}</p>
+                                <time class="blog-card-date">${a.publishDate.replace(/-/g, '.')}</time>
+                            </div>
+                        </a>
+                    </article>
+                `).join('');
+            })
+            .catch(() => {
+                document.getElementById('blog-list').innerHTML =
+                    '<p style="text-align:center; color:#999; padding: 40px 0;">記事の読み込みに失敗しました。</p>';
+            });
+
         // ハンバーガーメニュー
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
